@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input[type=button] {
+            background-color: plum;
+            color: black;
+            padding: 10px 10px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            width: 60px;
+            justify-content: center;
+        }
+
+        input[type=text] {
+            background-color: lightslategrey;
+            padding: 10px 118px;
+        }
+    </style>
+    <script>
+        function func(v1) {
+            document.getElementById("vIn").value += v1;
+        }
+        function clrs() {
+            document.getElementById("vIn").value = ""
+        }
+        function solve() {
+            var v2 = document.getElementById("vIn").value//read
+            //alert(v2)
+            var v3 = eval(v2)
+            document.getElementById("vIn").value = v3//write
+        }
+        function funsine() {
+            document.getElementById("vIn").value += 'Math.sin(';
+        }
+        function funcos(v1) {
+            document.getElementById("vIn").value += 'Math.cos(';
+        }
+        function funtan(v1) {
+            document.getElementById("vIn").value += 'Math.tan(';
+        }
+        function fact(n) {
+            var ans = 1;
+            for (var i = 2; i <= n; i++)
+            {
+                ans = ans * i;
+            }
+            document.getElementById("vIn").value += ans;
+        }
+        function ecal(v1) {
+            document.getElementById("vIn").value += 'Math.E';
+        }
+        function P1() {
+            document.getElementById("vIn").value += 'Math.PI';
+        }
+        function logcal(v1) {
+            document.getElementById("vIn").value += 'Math.log(';
+        }
+        function sqroot(v1) {
+            document.getElementById("vIn").value += 'Math.sqrt(';
+        }
+        function ln2cal() {
+            document.getElementById("vIn").value += 'Math.LN2';
+        }
+        function ln10cal() {
+            document.getElementById("vIn").value += 'Math.LN10';
+        }
+        function log2ecal(v1) {
+            document.getElementById("vIn").value += 'Math.LOG2E';
+        }
+        function neww(v1) {
+            document.getElementById("vIn").value += 'Math.LOG10E';
+        }
+        function neww1(v1) {
+            document.getElementById("vIn").value += 'Math.exp(';
+        }
+        function power(v1) {
+            document.getElementById("vIn").value += 'Math.pow(';
+        }
+    </script>
+</head>
+
+<body style="background-color: lightpink;">
+    <h3 style="text-align: center;">SIMPLE SCIENTIFIC CALCULATOR</h3>
+    <table align="center" border="1px">
+        <tr>
+            <td colspan="6"><input type="text" id="vIn" readonly></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="func('1')"></td>
+            <td><input type="button" value="2" onclick="func('2')"></td>
+            <td><input type="button" value="3" onclick="func('3')"></td>
+            <td><input type="button" value="c" onclick="clrs()"></td>
+            <td><input type="button" value="<-" onclick="func('<-')"></td>
+            <td><input type="button" value="=" onclick="solve()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="func('4')"></td>
+            <td><input type="button" value="5" onclick="func('5')"></td>
+            <td><input type="button" value="6" onclick="func('6')"></td>
+            <td><input type="button" value="-" onclick="func('-')"></td>
+            <td><input type="button" value="%" onclick="modu('num')"></td>
+            <td><input type="button" value="cos" onclick="funcos('num')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="func('7')"></td>
+            <td><input type="button" value="8" onclick="func('8')"></td>
+            <td><input type="button" value="9" onclick="func('9')"></td>
+            <td><input type="button" value="*" onclick="func('*')"></td>
+            <td><input type="button" value="n!" onclick="fact('num')"></td>
+            <td><input type="button" value="sin" onclick="funsine('num')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="." onclick="func('.')"></td>
+            <td><input type="button" value="0" onclick="func('0')"></td>
+            <td><input type="button" value="," onclick="func(',')"></td>
+            <td><input type="button" value="+" onclick="func('+')"></td>
+            <td><input type="button" value="/" onclick="func('/')"></td>
+            <td><input type="button" value="tan" onclick="funtan('num')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="E" onclick="ecal()"></td>
+            <td><input type="button" value="pi" onclick="P1()"></td>
+            <td><input type="button" value="^" onclick="power('num')"></td>
+            <td><input type="button" value="(" onclick="func('(')"></td>
+            <td><input type="button" value=")" onclick="func(')')"></td>
+            <td><input type="button" value="log" onclick="logcal('num')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="sqrt" onclick="sqroot('sqrt')"></td>
+            <td><input type="button" value="LN2" onclick="ln2cal()"></td>
+            <td><input type="button" value="LN10" onclick="ln10cal()"></td>
+            <td><input type="button" value="log2E" onclick="log2ecal('num')"></td>
+            <td><input type="button" value="log10E" onclick="neww('num')"></td>
+            <td><input type="button" value="EXP" onclick="neww1('num')"></td>
+        </tr>
+    </table>
+</body>
+</html>
